@@ -1,4 +1,3 @@
-//binary exponentiation
 #include <stdio.h>
 
 int recursive(int a,int b) {
@@ -23,10 +22,7 @@ int iterative(int a,int b) {
 		b/=2;
 	}
 	return res;
-
 }
-
-
 
 int main()
 {
