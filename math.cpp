@@ -64,7 +64,7 @@ int armstrong(int n){
     return 0;
 }
 
-//printalldivisors
+//print all divisors
 int printalldivisors(int n){
     vector<int> v;
     for(int i=1;i<=sqrt(n);i++){
@@ -80,9 +80,25 @@ int printalldivisors(int n){
     return 0;
 }
 
+//prime number check
+int primeornot(int n){
+    int cnt=0;
+    for(int i=1;i*i<=n;i++){//i<=sqrt(n) is same as i*i<=n
+        if(n%i==0){
+            cnt++;
+            if(n/i!=i){
+                cnt++;
+            }
+        }
+    }
+    if(cnt==2) cout<<"prime number";
+    else cout<<"Not a prime number";
+
+    return 0;
+}
 
 int main() {
-    int n=36;
-    printalldivisors(n);
+    int n=17;
+    primeornot(n);
     return 0;
 }
