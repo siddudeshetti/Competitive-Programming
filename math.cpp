@@ -1,6 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+void gcd(int a,int b){
+	int temp=0;
+	int min_element=min(a,b);
+	for(int i=1;i<min_element;i++){
+		if(a%i==0 && b%i==0){    //assigning commom divisors
+			temp=i;
+		}
+	}
+	cout<<temp;
+}
 
 //count number of digits
 int count_digit(int n){
