@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
+//gcd
 void gcd(int a,int b){
 	int temp=0;
 	int min_element=min(a,b);
@@ -11,6 +13,19 @@ void gcd(int a,int b){
 	}
 	cout<<temp;
 }
+
+//lcm
+void lcm(int a,int b){
+	int max_element=max(a,b);
+	while(1){
+		if(max_element%a==0 && max_element%b==0){
+			cout<<max_element;
+			break;
+		}
+		max_element++;
+	}
+}
+
 
 //count number of digits
 int count_digit(int n){
@@ -108,7 +123,8 @@ int primeornot(int n){
 }
 
 int main() {
-    int n=17;
-    primeornot(n);
+    int a,b;
+    cin>>a>>b;
+    lcm(a,b);
     return 0;
 }
