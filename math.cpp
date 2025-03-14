@@ -16,7 +16,7 @@ void gcd(int a,int b){
 
 //lcm
 void lcm(int a,int b){
-	int max_element=max(a,b);
+	int max_element=max(a,b); //min or max both are possible
 	while(1){
 		if(max_element%a==0 && max_element%b==0){
 			cout<<max_element;
