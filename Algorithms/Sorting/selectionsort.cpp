@@ -10,10 +10,6 @@ void selectionsort(int n,int arr[]){
             }
         }
     }
-    for (int i=0;i<n;i++) {
-        cout<<arr[i]<<" ";
-    }
-
 }
 
 int main() {
@@ -24,4 +20,7 @@ int main() {
         cin>>arr[i];
     }
     selectionsort(n,arr);
+    for (int i=0;i<n;i++) {
+        cout<<arr[i]<<" ";
+    }
 }
