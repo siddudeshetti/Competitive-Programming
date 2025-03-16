@@ -2,7 +2,6 @@
 using namespace std;
 
 void bubblesort(int n,int arr[]){
-
     //bubblesort algorithm
     for (int i=0;i<n;i++){
         for (int j=0;j<n-i-1;j++){
@@ -11,7 +10,7 @@ void bubblesort(int n,int arr[]){
             }
         }
     }
-
+    
 }
 
 int main() {
