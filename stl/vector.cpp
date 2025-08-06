@@ -9,7 +9,7 @@ void vector1(vector<int> &v){
 
 
 	//1.inserting an element
-		//a.inserting at position
+		//a.inserting at position O(n)
 	int position=3;
 	int val=20;
 	v.insert(v.begin()+position,val);
@@ -18,7 +18,7 @@ void vector1(vector<int> &v){
 	}
 	cout<<"(2)\n";
 
-		//b.insert at last
+		//b.insert at last O(1)
 	v.push_back(10); //add to last index,pop_back removes last index value
 	for(auto x : v){
 		cout<<x<<" ";
@@ -27,13 +27,14 @@ void vector1(vector<int> &v){
 
 
 	//2.removing an element
-		//a.by position
-	v.erase(v.begin()+1);
+		//a.by position O(n)
+	int posi=3;
+	v.erase(v.begin()+posi);
 	for(auto x : v){
 		cout<<x<<" ";
 	}
 	cout<<"(4)\n";
-		//b.by value
+		//b.by value O(n)
 	int value = 2;
 	v.erase(remove(v.begin(),v.end(),value),v.end());
 	for(auto x : v){
@@ -42,7 +43,7 @@ void vector1(vector<int> &v){
 	cout<<"(5)\n";
 
 
-	//3.sort
+	//3.sort O(n)
 	sort(v.begin(),v.end()); //for reverse we use sort(v.rbegin(),v.rend())
 	for(auto x : v){
 		cout<<x<<" ";
