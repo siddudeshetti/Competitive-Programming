@@ -1,34 +1,64 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
+
+void vector1(vector<int> &v){
+	for(auto x : v){
+		cout<<x<<" ";
+	}
+	cout<<"(1)\n";
+
+
+	//1.inserting an element
+		//a.inserting at position
+	int position=3;
+	int val=20;
+	v.insert(v.begin()+position,val);
+	for(auto x : v){
+		cout<<x<<" ";
+	}
+	cout<<"(2)\n";
+
+		//b.insert at last
+	v.push_back(10); //add to last index,pop_back removes last index value
+	for(auto x : v){
+		cout<<x<<" ";
+	}
+	cout<<"(3)\n";
+
+
+	//2.removing an element
+		//a.by position
+	v.erase(v.begin()+1);
+	for(auto x : v){
+		cout<<x<<" ";
+	}
+	cout<<"(4)\n";
+		//b.by value
+	int value = 2;
+	v.erase(remove(v.begin(),v.end(),value),v.end());
+	for(auto x : v){
+		cout<<x<<" ";
+	}
+	cout<<"(5)\n";
+
+
+	//3.sort
+	sort(v.begin(),v.end()); //for reverse we use sort(v.rbegin(),v.rend())
+	for(auto x : v){
+		cout<<x<<" ";
+	}
+	cout<<"(6)\n";
+
+
+}
+
 int main(){
-
-    vector<int> v={10,20,30,40,50};
-    vector<int> v1(5,9);//output={9,9,9,9,9}
-    
-    //insert
-    v.push_back(88);//to insert at back
-    v.insert(v.begin()+1,99);
-
-    //delete
-    v.pop_back();//to pop delete at back
-    v.erase(find(v.begin(),v.end(),30));
-
-    //traverse
-    for(auto i:v){//iterator for each loop 
-        cout<<i<<" ";
-    }
-    cout<<endl;
-    
-    for(int i=0;i<v1.size();i++){//iterator for loop 
-        cout<<v1[i]<<" ";
-    }
-    cout<<endl;
-
-    //other
-    cout<<v.front()<<" "<<v.back()<<endl;//accessing front and back elements
-    cout<<v.size()<<endl;//size of vector
-    cout<<v.empty()<<endl;//checks is vector is empty or not
-    v.swap(v1);//v exchanged to v1 and v1 exchanged to v
-
-    return 0;
+	vector<int> v;
+	int x;
+	while(cin>>x){
+		v.push_back(x);
+		if(cin.peek()=='\n') break;
+	}
+	vector1(v);
+	return 0;
 }
