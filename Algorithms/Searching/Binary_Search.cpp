@@ -17,3 +17,19 @@ int binarysearch(vector<int> v,int t){
 
     return -1;
 }
+
+int recursive_binarysearch(vector<int> v, int t, int l, int h)
+{
+    if (l > h){
+        return -1;
+    }
+
+    int m = l + (h - 1) / 2;
+    if (v[m] == t){
+        return m;
+    }else if (t < v[m]){
+        return rbs(v, t, l, m-1);
+    }else{
+        return rbs(v, t, m+1, h);
+    }
+}
