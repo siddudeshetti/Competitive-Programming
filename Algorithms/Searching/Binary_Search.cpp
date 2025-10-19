@@ -1,21 +1,19 @@
-void bs(vector<int> &v,int find){
-    int low=0;
-    int high=v.size()-1;
+int binarysearch(vector<int> v,int t){
+    int n=v.size();
 
-    while(high-low>1){
-        int mid=(low+high)/2;
-        if(v[mid]<find){
-            low=mid+1;
+    //binarysearch algo
+    int l=0;
+    int h=n-1;
+    while (l<=h){
+        int m=l+(h-1)/2;
+        if(v[m]==t){
+            return m;
+        }else if(t<v[m]){
+            h=m-1;
         }else{
-            high=mid;
+            l=m+1;
         }
     }
-  
-    if(v[low]==find){
-        cout<<low;
-    }else if(v[high]==find){
-        cout<<high;
-    }else{
-        cout<<-1;
-    }
+
+    return -1;
 }
