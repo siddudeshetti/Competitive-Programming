@@ -1,21 +1,44 @@
-void bs(vector<int> &v,int find){
-    int low=0;
-    int high=v.size()-1;
+def bs(arr,data):
+    low = 0;
+    high = len(arr)-1
 
-    while(high-low>1){
-        int mid=(low+high)/2;
-        if(v[mid]<find){
-            low=mid+1;
-        }else{
-            high=mid;
-        }
-    }
-  
-    if(v[low]==find){
-        cout<<low;
-    }else if(v[high]==find){
-        cout<<high;
-    }else{
-        cout<<-1;
-    }
-}
+    while low <= high:
+        mid=(low+high)//2;
+        if arr[mid] == data:
+            return mid
+
+        if(arr[mid]<data):
+            low=mid+1
+        else:
+            high=mid-1
+    return -1
+
+def lb(arr,x):
+    n = len(arr)
+    low = 0
+    high = n-1
+    ans = n
+    while (low<=high):
+        mid = (low+high)//2
+
+        if(arr[mid]>=x):
+            ans = mid
+            high = mid - 1
+        else:
+            low = mid + 1
+    return ans
+
+def ub(arr, x):
+    n =  len(arr)
+    low = 0
+    high = n-1
+    ans = n
+    while (low <= high):
+        mid = (low + high) // 2
+
+        if(arr[mid]>x):
+            ans = mid
+            high = mid -1
+        else:
+            low = mid + 1
+    return ans
