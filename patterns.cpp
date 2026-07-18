@@ -1,136 +1,143 @@
-#include <bits/stdc++.h>
-using namespace std;
+def pattern1(n):
+    for i in range(n):
+        for j in range(n):
+            print("*",end=" ")
+        print()
 
-void pattern1(){
-    int n;
-    cin>>n;
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
-            cout<<"*";
-        }
-        cout<<endl;
-    }
-}
+def pattern2(n):
+    for i in range(n):
+        for j in range(0,i+1):
+            print("*",end=" ")
+        print()
 
-void pattern2(){
-    int n;
-    cin>>n;
-    for(int i=0;i<n;i++){
-        for(int j=0;j<=i;j++){
-            cout<<"*";
-        }
-        cout<<endl;
-    }
-}
+def pattern3(n):
+    for i in range(1,n+1):
+        for j in range(1,i+1):
+            print(j,end=" ")
+        print()
 
-void pattern3(){
-    int n;
-    cin>>n;
-    for(int i=1;i<=n;i++){
-        for(int j=1;j<=i;j++){
-            cout<<j;
-        }
-        cout<<endl;
-    }
-}
+def pattern4(n):
+    for i in range(1,n+1):
+        for j in range(1,i+1):
+            print(i,end=" ")
+        print()
 
-void pattern4(){
-    int n;
-    cin>>n;
-    for(int i=1;i<=n;i++){
-        for(int j=1;j<=i;j++){
-            cout<<i;
-        }
-        cout<<endl;
-    }
-}
+def pattern5(n):
+    for i in range(n):
+        for j in range(0,n-i):
+            print("*",end=" ")
+        print()
+    
+def pattern6(n):
+    for i in range(1,n+1):
+        for j in range(1,n-i+2):
+            print(j,end=" ")
+        print()
+    
+def pattern7(n):
+    for i in range(n):
 
-void pattern5(){
-    int n;
-    cin>>n;
-    for(int i=1;i<=n;i++){
-        for(int j=i;j<=n;j++){
-            cout<<"*";
-        }
-        cout<<endl;
-    }
-}
+        for j in range(n-i-1):
+            print("-",end=" ")
+        
+        for j in range(2*i+1):
+            print("*",end=" ")
 
-void pattern6(){
-    int n;
-    cin>>n;
-    for(int i=1;i<=n;i++){
-        for(int j=i;j<=n;j++){
-            cout<<j;
-        }
-        cout<<endl;
-    }
-}
+        for j in range(n-i-1):
+            print("-",end=" ")
+        print()
 
-void pattern7(){
-    int n;
-    cin>>n;
-    for(int i=0;i<n;i++){
-        //space
-        for(int j=0;j<n-i-1;j++){
-            cout<<" ";
-        }
-        //star
-        for(int j=0;j<2*i+1;j++){
-            cout<<"$";
-        }
-        //space
-        for(int j=0;j<n-i-1;j++){
-            cout<<" ";
-        }
+def pattern8(n):
+    for i in range(n):
 
-        cout<<endl;
-    }
-}
+        for j in range(i):
+            print("-",end=" ")
+        
+        for j in range(2*(n-i)-1):
+            print("*",end=" ")
 
-void pattern8(){
-    int n;
-    cin>>n;
-    for(int i=0;i<n;i++){
-        //space
-        for(int j=0;j<i;j++){
-            cout<<" ";
-        }
-        //star
-        for(int j=0;j<2*n-(2*i+1);j++){
-            cout<<"$";
-        }
-        //space
-        for(int j=0;j<i;j++){
-            cout<<" ";
-        }
+        for j in range(i):
+            print("-",end=" ")
+        print()
+
+def pattern9(n):
+    pattern7(n)
+    pattern8(n)
+
+def pattern10(n):
+    for i in range(1,2*n):
+        stars = i
+        if i > n : stars = 2*n-i
+        for j in range(0,stars):
+            print("*",end=" ")
+        print()
+
+def pattern11(n):
+    start = 1
+    for i in range(n):
+        if i%2 == 0 : start = 1
+        else : start = 0
+        for j in range(i+1):
+            print(start, end=" ")
+            start = 1- start
+        print()
+
+def pattern12(n):
+    space = 2*(n-1)
+    for i in range(n):
+        for j in range(1,i+1):
+            print(j,end= " ")
+
+        for j in range(0,space):
+            print("-",end = " ")
+
+        for j in range(i,0,-1):
+            print(j,end = " ")
+        space = space-2
+        print()
+        
+def pattern13(n):
+    m = 1
+    for i in range(1,n+1):
+        for j in range(i):
+            print(m,end = " ")
+            m += 1
+        print()
+
+def pattern14(n):
+    for i in range(65,65+n):
+        for j in range(65,i+1):
+            print(chr(j),end = " ")
+        print()
+
+def pattern15(n):
+    start = 65
+    end = 65+n
+    counter = 0
+    for i in range(start,end):
+        for j in range(start,end-counter):
+            print(chr(j),end = " ")
+        counter = counter+1
+        print()
+        
+def pattern16(n):
+    start = 65
+    end = 65+n
+    for i in range(start,end):
+        for j in range(start,i+1):
+            print(chr(i),end = " ")
+        print()
+
+def pattern17(n):
+    
+        
+        
+        
+
+        
+        
 
 
-        cout<<endl;
-    }
-}
+        
 
-void pattern9(){
-    pattern7();
-    pattern8();
-}
-
-void pattern10(){
-    int n;
-    cin>>n;
-    for(int i=1;i<=2*n-1;i++){
-        int stars=i;
-        if(i>=n) stars=2*n-i;
-        for(int j=1;j<=stars;j++){
-            cout<<"*";
-        }
-        cout<<endl;
-    }
-}
-
-
-
-int main() {
-    pattern10();
-    return 0;
-}
+pattern17(5)
