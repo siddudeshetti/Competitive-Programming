@@ -1,4 +1,6 @@
-def graph():
+from collections import deque
+
+def graph_insertion():
     n = int(input())
     m = int(input())
 
@@ -30,8 +32,35 @@ def graph():
         arr[u].append(u)
         arr[v].append(v)
 
+def dfs(node,adj,visit,ans):
+    visit[node] = 1
+    ans.append(node)
+
+    for x in adj[node]:
+        if not visit[x]:
+            dfs(x,adj,visit,ans)
+
+def bfs(v,adj):
+
+    visit = [0]*v
+    visit[0] = 1
+
+    ans = []
+
+    q = deque()
+    q.append(0)
+
+    while q:
+        node = q.popleft()
+        ans.append(node)
+
+        for x in adj[node]:
+            if not visit[x]:
+                visit[x] =1
+                q.append(x)
+
+    return ans
 
 
         
-
 
