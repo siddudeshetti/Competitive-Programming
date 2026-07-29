@@ -2,6 +2,8 @@ class TrieNode:
     def __init__(self):
         self.children = {}
         self.end = False
+        self.wordCount = 0
+        self.prefixCount = 0
 
 
 class Trie:
