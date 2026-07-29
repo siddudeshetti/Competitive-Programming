@@ -41,6 +41,7 @@ def dfs(node,adj,visit,ans):
             dfs(x,adj,visit,ans)
 
 def bfs(v,adj):
+    n = len(adj)
 
     visit = [0]*v
     visit[0] = 1
