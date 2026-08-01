@@ -1,40 +1,21 @@
-# Constants ========================================
-
-INT_MAX = 2**31 - 1
-INT_MIN = -(2**31)
-
-LL_MAX = 2**63 - 1
-LL_MIN = -(2**63)
-
+import sys
+from collections import defaultdict, Counter, deque
+from bisect import bisect_left, bisect_right
+from heapq import heappush, heappop
+input = sys.stdin.readline
 
 INF = 10**18
-NINF = -10**18
-
 MOD = 10**9 + 7
 
-
 def solve():
-    
-    #single variables ================================
 
-    # n = int(input())
-    # s = input()      #s = input().split()
-
-    # array ==========================================
-
-    # arr = [0]*n
-    # s = input().split()
-
-    # for i in range(n):
-    #     arr[i] = int(s[i])
-
-    # for x in arr:
-    #         print(x,end = " ")
-
-    # map ============================================
+    n = int(input())
+    # s = input()
+    # s = input().strip()
+    # n, m = map(int, input().split())
+    arr = list(map(int, input().split()))
 
     # mp = {}
-
     # for x in arr:
     #     if x not in mp:
     #         mp[x] = 0
@@ -43,14 +24,11 @@ def solve():
     # for key, value in mp.items():
     #     print(key, value)
 
-    # Algorithm ============================================
-    pass
-
+    # Algorithm =======
     
 
 
 
-# ==================== Driver ====================
 
 t = int(input())
 while t > 0:
